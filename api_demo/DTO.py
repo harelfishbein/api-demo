@@ -1,10 +1,11 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from uuid import UUID, uuid4
+from typing import Optional
 from decimal import Decimal
 from repository import *
 
 class CustomerDTO(BaseModel):
-    id: UUID
+    id: Optional[UUID] = Field(default_factory=uuid4)
     first_name: str
     last_name: str
     balance: Decimal
