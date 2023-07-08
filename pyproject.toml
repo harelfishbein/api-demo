@@ -8,8 +8,8 @@ packages = [{include = "api_demo"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-pendulum = "^2.1.2"
 fastapi = "^0.99.1"
+aiofile = "^3.8.7"
 
 
 [build-system]
