@@ -38,7 +38,7 @@ async def get_inventory_item(r: Annotated[Repository, Depends()], name: ItemName
     return True
     
 @fastapi.post("/customer/")
-async def add_customer(r: Annotated[Repository, Depends()], customer: CustomerDTO, id: Union[UUID, None] = None):
+async def add_customer(r: Annotated[Repository, Depends()], customer: CustomerDTO):
     my_customer = customer._to_customer()
     await r.dump_customer(my_customer)
     return my_customer.id
